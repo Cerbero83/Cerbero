@@ -1,0 +1,116 @@
+public class RecursiveReverseString {
+/**
+ * Reversing a string using recursive methods
+ * 
+ */
+    String reverse = "";
+     
+    public String reverseString(String s){
+         
+        if(s.length() == 1){
+            return s;
+        } else {
+            reverse += s.charAt(s.length()-1)
+                    +reverseString(s.substring(0,s.length()-1));
+            return reverse;
+        }
+    }
+     
+    public static void main(String a[]){
+        RecursiveReverseString rs = new RecursiveReverseString();
+        System.out.println("Result: "+rs.reverseString("MatteoCervella"));
+    }
+}
+
+
+
+public class CommonElements {
+/**
+ * Finding common elements between two given arrays
+ * 
+ */
+    public static void main(String a[]){
+        int[] array1 = {6,10,19,83};
+        int[] array2 = {3,10,12,51,21,19,4};
+        for(int i=0;i<array1.length;i++){
+            for(int j=0;j<array2.length;j++){
+                if(array1[i]==array2[j]){
+                    System.out.println(array1[i]);
+                }
+            }
+        }
+    }
+}
+
+
+
+public class BubbleSort {
+ 
+   /**
+    * Simple bubble sort logic
+    * 
+    */
+    public static void bubblesort(int array[]) {
+        int n = array.length;
+        int k;
+        for (int m = n; m >= 0; m--) {
+            for (int i = 0; i < n - 1; i++) {
+                k = i + 1;
+                if (array[i] > array[k]) {
+                    swap(i, k, array);
+                }
+            }
+            printNumbers(array);
+        }
+    }
+ /**
+  * Array swap
+  */
+    private static void swap(int i, int j, int[] array) {
+ 
+        int temp;
+        temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+  /**
+   * Output method
+   */
+    private static void printNumbers(int[] input) {
+         
+        for (int i = 0; i < input.length; i++) {
+            System.out.print(input[i] + ", ");
+        }
+        System.out.println("\n");
+    }
+ 
+    public static void main(String[] args) {
+        int[] input = { 6, 10, 83, 24, 7, 87, 12, 16 };
+        bubblesort(input);
+ 
+    }
+}
+
+
+
+public class FactorialInJava{
+/**
+ * Simple Java program to find the factorial of a number using iteration.
+ * 
+ */
+    public static void main(String args[]) {
+       
+       System.out.println("factorial of 12 is: " + factorial(12)); 
+    }
+  
+    public static int factorial(int num){
+        
+        int result = 1;
+        while(num != 0){
+            result = result*num;
+            num--;
+        }
+      
+        return result;
+    }
+}
